@@ -1,5 +1,4 @@
 const FA_EDIT_MIN = 500; // FA: 500 edits
-
 const FA_DAY_MIN = 365; // FA: 1 year
 const AR_USER_GROUP = 'autoreview'; // AR: Autoreviewer
 const DE_USER_GROUP = 'autoreview'; // DE: "Active Sichter" Editors with permission to flag revisions.
@@ -54,9 +53,4 @@ export function getDecidingFactors() {
 	const siteLang = mw.config.get( 'wgContentLanguage' );
 	return { userReg: userReg, siteName: siteName, userName: userName,
 		userEditCount: userEditCount, userGroups: userGroups, siteLang: siteLang };
-}
-
-export function getLocalizations( lang ) {
-	return {bannerTitleText: 'Learn about wikipedia. this is going to be a lot of text, align automatically.',
-			  bannerSubtitleText: 'civil servant presents', bannerButtonText: 'click here to learn more' };
 }
