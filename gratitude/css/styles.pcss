@@ -1,5 +1,5 @@
 :root {
-	--banner-color-primary: #0d6798;
+	--banner-color-primary: #40ad90;
 	--banner-color-primary-dark: #105277;
 	--banner-color-primary-darker: #0d4260;
 	--banner-color-white: #ffffff;
@@ -28,7 +28,7 @@
 	}
 	&-title {
 		height: 50%;
-		font-size: 20px;
+		font-size: 18px;
 		padding: 20px 5% 0;
 		display: block;
 		text-align: left;
@@ -37,6 +37,9 @@
 		&-inner {
 			float: left;
 			width: 320px;
+			&-rtl {
+				text-align: right;
+			}
 		}
 		&-long {
 			font-size: 18px;
@@ -46,9 +49,9 @@
 			text-transform: uppercase;
 			color: var( --banner-color-primary-darker );
 			width: 100%;
-			position: absolute;
-			left: 5%;
-			top: 6px;
+			//position: absolute;
+			//left: 5%;
+			top: -20px;
 		}
 	}
 	&-image {
@@ -79,9 +82,6 @@
 		&-inner {
 			font-weight: bold;
 			display: inline-block;
-			&:after {
-				content: '\2192';
-			}
 		}
 		&-link {
 			color: var( --banner-color-white );
@@ -125,7 +125,7 @@
  */
 @media ( min-width: 600px ) {
 	.author-banner {
-		background: var( --banner-color-primary-dark );
+		background: var( --banner-color-primary );
 		height: 140px;
 		&-inner {
 			flex-direction: row;
@@ -166,12 +166,11 @@
 				text-transform: uppercase;
 				width: 100%;
 				position: absolute;
-				//left: 0;
 				top: -20px;
 			}
 		}
 		&-image {
-			background: linear-gradient( to right, var( --banner-color-primary ), var( --banner-color-primary-dark ) );
+			background: var(--banner-color-primary);
 			width: 185px;
 			flex: 0 0 185px;
 			position: relative;
@@ -216,7 +215,7 @@
 	.author-banner {
 		height: 170px;
 		&-title {
-			font-size: 33px;
+			font-size: 25px;
 			&-question {
 				font-size: 20px;
 				top: -30px;

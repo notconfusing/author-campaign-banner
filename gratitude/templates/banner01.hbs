@@ -1,4 +1,4 @@
-<div id="author-banner-container" class="author-banner">
+<div id="author-banner-container" dir={{bannerDir}} class="author-banner">
     <div class="author-banner-close">
         <a id="author-banner-close-button" href="#" title="Schließen"><div class="author-banner-close-button"></div></a>
     </div>
@@ -7,12 +7,12 @@
         <div class="author-banner-inner">
             <div class="author-banner-title">
                 <div class="author-banner-title-wrapper">
-                    <div class="author-banner-title-inner">
+                    <div class="author-banner-title-inner author-banner-title-inner-{{bannerDir}}">
                         <div class="author-banner-title-question">
-                            {{bannerTitleText}}
+                            {{bannerTitleQuestion}}
                         </div>
                         <div class="author-banner-title-ask">
-                            {{bannerSubtitleText}}
+                            {{bannerSubtitleAsk}}
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
             <div class="author-banner-button-wrapper">
                 <div class="author-banner-button">
                     <div class="author-banner-button-inner">
-                        {{bannerButtonText}}
+                        {{bannerButtonNext}}
                     </div>
                 </div>
             </div>
