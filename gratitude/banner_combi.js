@@ -8,7 +8,7 @@ $( document ).ready( function () {
 	const bannerName = 'CS18_grat_combi';
 	const bannerTemplate = require( './templates/banner01.hbs' );
 	let dF = getDecidingFactors();
-	dF.siteLang = 'fa';
+	dF.siteLang = 'pl';
     let bannerEnabled = decideShow( dF.siteLang, dF.userReg, dF.userEditCount,
 		dF.userGroups );
     bannerEnabled = true;
