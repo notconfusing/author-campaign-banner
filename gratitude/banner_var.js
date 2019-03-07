@@ -14,16 +14,21 @@ const getDaysRegistered = function ( userReg ) {
 	return Math.ceil( msSinceReg / msInDay );
 };
 
-export function decideShow( lang, userReg, userEditCount, userGroups ) {
+export function decideShow( lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax ) {
 	// If any of these values are null, the user is probably not logged in, so we don't want to display.
 	if ( lang === null ||
         userReg === null ||
         userEditCount === null ||
-        userGroups === null ) {
+        userGroups === null ||
+		bannerImpressionCount === null ||
+        bannerImpressionMax === null ) {
 		return false;
 	}
-
-	if ( lang === 'de' ) {
+	// check the impression count as well
+	else if ( bannerImpressionCount > bannerImpressionMax ) {
+		return false;
+	// check language specific features
+	} else if ( lang === 'de' ) {
 		const isAutoReview = userGroups.indexOf( DE_USER_GROUP ) >= 0;
 		const daysEnough = getDaysRegistered( userReg ) >= DE_DAY_MIN;
 		const editEnough = userEditCount >= DE_EDIT_MIN;
@@ -39,7 +44,6 @@ export function decideShow( lang, userReg, userEditCount, userGroups ) {
 	}
 	// If language not here.
 	else {
-	    // console.error( 'No target language found' );
 		return false;
 	}
 }
@@ -53,4 +57,31 @@ export function getDecidingFactors() {
 	const siteLang = mw.config.get( 'wgContentLanguage' );
 	return { userReg: userReg, siteName: siteName, userName: userName,
 		userEditCount: userEditCount, userGroups: userGroups, siteLang: siteLang };
+}
+
+function getBannerImpCount( bannerId ) {
+	var cookieValue, cookieData;
+
+	if ( $.cookie( 'centralnotice_single_banner_impression_count' ) ) {
+		cookieValue = $.cookie( 'centralnotice_single_banner_impression_count' );
+		cookieData = cookieValue.split( '|' );
+		if ( cookieData[ 0 ] === bannerId ) {
+			return parseInt( cookieData[ 1 ], 10 );
+		}
+	}
+	return 0;
+}
+
+function getCookieExpiryDate() {
+	return new Date( ( new Date() ).getFullYear() + 1, 0, 1 );
+}
+
+export function increaseBannerImpCount( bannerId ) {
+	var impCount = getBannerImpCount( bannerId );
+
+	$.cookie( 'centralnotice_single_banner_impression_count', bannerId + '|' + ( impCount + 1 ), {
+		expires: getCookieExpiryDate(),
+		path: '/'
+	} );
+	return ( impCount + 1 );
 }

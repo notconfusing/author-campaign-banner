@@ -1,9 +1,9 @@
 <div id="author-banner-container" dir={{bannerDir}} class="author-banner">
-    <div class="author-banner-close">
+    <div class="author-banner-close author-banner-close-{{bannerDir}}">
         <a id="author-banner-close-button" href="#" title="Schließen"><div class="author-banner-close-button"></div></a>
     </div>
 
-    <a class="author-banner-button-link" href="https://meta.wikimedia.org/wiki/CivilServant's_Wikimedia_studies">
+    <a class="author-banner-button-link" href="{{bannerLink}}">
         <div class="author-banner-inner">
             <div class="author-banner-title">
                 <div class="author-banner-title-wrapper">
@@ -18,8 +18,8 @@
                     </div>
                 </div>
             </div>
-            <div class="author-banner-image">
-                <div class="author-banner-image-inner"></div>
+            <div class="author-banner-image-{{bannerDir}}">
+                <div class="author-banner-image-{{bannerDir}}-inner"></div>
             </div>
             <div class="author-banner-button-wrapper">
                 <div class="author-banner-button">
