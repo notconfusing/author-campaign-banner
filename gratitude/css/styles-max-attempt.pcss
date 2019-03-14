@@ -27,16 +27,22 @@
 		text-align: center;
 	}
 	&-title {
-		height: 50%;
-		font-size: 20px;
-		padding: 20px 5% 0;
-		display: block;
+		background: var( --banner-color-primary );
+		flex: 1 1 40%;
+		font-size: 16px;
+		height: 100%;
+		padding: 10px 5% 0;
+		position: relative;
+		width: 70%;
+		box-sizing: border-box;
+		margin: 0;
 		text-align: left;
-		vertical-align: top;
-		font-weight: bold;
 		&-inner {
 			float: left;
-			width: 320px;
+			width: 100%;
+			&-rtl {
+				text-align: right;
+			}
 		}
 		&-long {
 			font-size: 18px;
@@ -44,22 +50,24 @@
 		&-question {
 			font-size: 10px;
 			text-transform: uppercase;
-			color: var( --banner-color-primary-darker );
+			color: var( --banner-color-white );
 			width: 100%;
-			position: absolute;
-			left: 5%;
-			top: 6px;
-			max-width: 60%;
+            font-weight: bold;
 		}
+        &-ask{
+            color: var(--banner-color-white);
+            font-weight: normal;
+        }
 	}
 	&-image-ltr {
-		width: 100px;
+		width: 160px;
 		position: absolute;
 		right: 0;
 		bottom: -5px;
 		&-inner {
 			background: transparent url( '//upload.wikimedia.org/wikipedia/commons/0/0a/Hand%2C_bar_and_pie_chart%2C_light.png' ) no-repeat center center;
-			background-size: contain;
+			-webkit-background-size: cover;
+			background-size: cover;
 			width: 110px;
 			height: 100px;
 			z-index: 1;
@@ -67,12 +75,12 @@
 		}
 	}
 	&-button {
-		color: var( --banner-color-primary-darker );
+		color: var( --banner-color-primary );
 		background-color: var( --banner-color-white );
 		box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.25 );
 		padding: 12px;
 		display: inline-block;
-		border-radius: 45px;
+		border-radius: 12px;
 		text-align: left;
 		margin: 0 0 10px 5%;
 		float: left;
@@ -81,9 +89,6 @@
 		&-inner {
 			font-weight: bold;
 			display: inline-block;
-			&:after {
-				content: '\2192';
-			}
 		}
 		&-link {
 			color: var( --banner-color-white );
@@ -95,7 +100,7 @@
 			}
 		}
 		&-wrapper {
-			height: 50%;
+			height: 30%;
 		}
 	}
 	&-close {
@@ -127,7 +132,7 @@
  */
 @media ( min-width: 600px ) {
 	.author-banner {
-		background: var( --banner-color-primary-dark );
+		background: var( --banner-color-primary );
 		height: 140px;
 		&-inner {
 			flex-direction: row;
@@ -159,41 +164,32 @@
 				display: flex;
 				flex-direction: column;
 				position: absolute;
-				padding: 0 20px 0 0;
+				padding: 0 20px 0 20px;
 				right: 0;
 				bottom: 30px;
 			}
 			&-question {
 				font-size: 15px;
-				text-transform: uppercase;
+				//text-transform: uppercase;
 				width: 100%;
-				position: absolute;
-				left: 0;
-				top: -12px;
-			}
+				//position: absolute;
+				//top: -20px;
+            }
 		}
 		&-image-ltr {
-			background: linear-gradient( to right, var( --banner-color-primary ), var( --banner-color-primary-dark ) );
-			width: 185px;
-			flex: 0 0 185px;
-			position: relative;
-			right: initial;
-			bottom: initial;
+			background: var(--banner-color-primary);
+			width: 236px;
 			&-inner {
 				position: relative;
-				background-size: contain;
-				background-image: url( '//upload.wikimedia.org/wikipedia/commons/0/0a/Hand%2C_bar_and_pie_chart%2C_light.png' );
+				background-size: cover;
 				width: 100%;
-				height: 180px;
-				top: -20px;
-				margin: 0;
-				right: 0;
+				height: 140px;
 			}
 		}
 		&-button {
 			box-sizing: border-box;
 			line-height: 1.4;
-			height: 100%;
+			//height: 100%;
 			padding: 15px 25px;
 			font-size: 16px;
 			&-wrapper {
@@ -218,10 +214,10 @@
 	.author-banner {
 		height: 170px;
 		&-title {
-			font-size: 33px;
+			font-size: 25px;
 			&-question {
 				font-size: 20px;
-				top: -22px;
+				top: -30px;
 			}
 			&-long {
 				font-size: 28px;
@@ -230,7 +226,7 @@
 		&-inner {
 			padding-top: 0;
 		}
-		&-image-ltr {
+		&-image {
 			width: 272px;
 			flex: 0 0 272px;
 			&-inner {
