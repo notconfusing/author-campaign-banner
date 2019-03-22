@@ -80,6 +80,7 @@
     float: left;
     font-size: 13px;
     width: 200px;
+    margin-top: 10px;
     z-index: 3;
     &-inner {
       font-weight: bold;
@@ -154,12 +155,21 @@
         font-weight: lighter;
       }
     }
-    &-image-ltr {
-      right: 10%;
+    &-image {
       top: -0px; /* no one knows why */
-      &-inner {
-        height: 120px;
-        width: 200px;
+      &-ltr {
+        right: 10%;
+        &-inner {
+          height: 120px;
+          width: 200px;
+        }
+      }
+      &-rtl {
+        left: 10%;
+        &-inner {
+          height: 120px;
+          width: 200px;
+        }
       }
     }
     &-button {
@@ -222,15 +232,25 @@
         font-size: 33px;
       }
     }
-    &-image-ltr {
+    &-image {
       z-index: 0;
       position: relative;
-      left: 45%;
       top: -15px;
-      &-inner {
-        width: 500px;
-        height: 140px;
-        position: relative;
+      &-ltr{
+        left: 45%;
+        &-inner {
+          width: 500px;
+          height: 140px;
+          position: relative;
+        }
+      }
+      &-rtl{
+        right: 45%;
+        &-inner {
+          width: 500px;
+          height: 140px;
+          position: relative;
+        }
       }
     }
     &-button {
@@ -239,10 +259,17 @@
       &-wrapper {
         position: absolute;
         margin-top: 35px;
-        margin-right: 50px;
         top: 0;
-        right: 0;
         z-index: 1;
+        &-ltr{
+          margin-right: 50px;
+          right: 0;
+        }
+        &-rtl{
+          margin-left: 50px;
+          left: 0;
+      }
+
       }
       &-inner {
         font-weight: bold;
