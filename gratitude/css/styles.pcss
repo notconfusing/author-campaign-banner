@@ -1,193 +1,195 @@
 :root {
-	--banner-color-primary: #40ad90;
-	--banner-color-primary-dark: #105277;
-	--banner-color-primary-darker: #0d4260;
-	--banner-color-white: #ffffff;
+  --banner-color-primary: #40ad90;
+  --banner-color-primary-dark: #105277;
+  --banner-color-primary-darker: #0d4260;
+  --banner-color-white: #ffffff;
 }
 
 /*
  Common rules, mobile-first
  */
 
-@media ( min-width: 320px ) {
-  .author-banner {
-    z-index: 101;
-    width: 100%;
-    background-color: var( --banner-color-primary );
+.author-banner {
+  z-index: 101;
+  width: 100%;
+  background-color: var(--banner-color-primary);
   /*overflow: hidden;*/
-    height: 140px;
-    &-container {
+  height: 140px;
+  &-container {
     /*height: 280px;*/
-    }
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      padding: 20px;
-      color: var( --banner-color-white );
-    }
-    &-image-ltr {
-      align-self: flex-end;
-      z-index: 0;
+  }
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--banner-color-white);
+  }
+  &-image{
+    position: absolute;
+    top:50px;
+    z-index: 0;
+    &-ltr {
+      right: 5%;
       &-inner {
-        background: transparent url( '//upload.wikimedia.org/wikipedia/commons/0/0a/Hand%2C_bar_and_pie_chart%2C_light.png' ) no-repeat center center;
+        background: transparent url('//upload.wikimedia.org/wikipedia/commons/0/0a/Hand%2C_bar_and_pie_chart%2C_light.png') no-repeat center center;
         width: 110px;
         height: 100px;
         background-size: contain;
       }
     }
+    &-rtl {
+      left: 5%;
+      &-inner {
+        background: transparent url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Hand%2C_bar_and_pie_chart%2C_dark.png') no-repeat center center;
+        width: 110px;
+        height: 100px;
+        background-size: contain;
+        }
+    }
+  }
   &-title {
     /*width: 100%;*/
-    max-height: 75%;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
     &-wrapper {
-      max-width: 75%;
-      /*max-width: 90%;*/
     }
     &-question {
       font-weight: bold;
-      font-size: 30px;
-			color: var( --banner-color-white );
+      font-size: 16px;
+      color: var(--banner-color-white);
     }
     &-ask {
-      display: flex;
-      flex-wrap: wrap;
       font-weight: normal;
-      font-size: 25px;
+      font-size: 12px;
     }
     &-inner {
     }
     &-long {
-			font-size: 18px;
-		}
+      font-size: 18px;
+    }
   }
   &-button {
-    color: var( --banner-color-primary-darker );
-    background-color: var( --banner-color-white );
-    box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.25 );
-    padding: 12px;
+    color: var(--banner-color-primary-darker);
+    background-color: var(--banner-color-white);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    padding: 5px;
     display: inline-block;
-    border-radius: 45px;
-    text-align: left;
-    margin: 0 0 0 5%;
+    border-radius: 5px;
+    text-align: center;
     float: left;
     font-size: 13px;
-    width: 110px;
+    width: 200px;
+    z-index: 3;
     &-inner {
       font-weight: bold;
       display: inline-block;
     }
-      &:after {
-      }
+    &:after {
+    }
     &-link {
-      color: var( --banner-color-white );
-			text-decoration: none;
+      color: var(--banner-color-white);
+      text-decoration: none;
       &:hover,
-			&:visited {
-				color: var( --banner-color-white );
-				text-decoration: none;
-			}
+      &:visited {
+        color: var(--banner-color-white);
+        text-decoration: none;
+      }
     }
     &-wrapper {
-      position: absolute;
-      top: 80px;
-      margin: none;
-		}
+      display: flex;
+      position: static;
+    }
   }
   &-close {
-		position: absolute;
-		right: 0.2em;
-		top: 0.5em;
-		&-button {
-			position: relative;
-			padding: 0 5px;
-			flex: 0 0 auto;
-			right: 0;
-			top: -3px;
-			line-height: 20px;
-			font-size: 32px;
-			font-weight: bold;
-			&:before {
-				position: relative;
-				content: '\00d7';
-				color: var( --banner-color-white );
-				float: left;
-				height: 100%;
-			}
-		}
-	}
+    position: absolute;
+    right: 0.2em;
+    top: 0.5em;
+    &-button {
+      position: relative;
+      padding: 0 5px;
+      flex: 0 0 auto;
+      right: 0;
+      top: -3px;
+      line-height: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      &:before {
+        position: relative;
+        content: '\00d7';
+        color: var(--banner-color-white);
+        float: left;
+        height: 100%;
+      }
+    }
+  }
 }
-}
+
 /*
  Tablet and larger devices
  */
 @media ( min-width: 600px ) {
-  .cn-undefined {
-    height: 140px;
-  }
   .author-banner {
-    background-color: var( --banner-color-primary);
+    background-color: var(--banner-color-primary);
+    height: 120px;
     &-container {
     }
-  	&-inner {
-  	}
-  	&-title {
+    &-inner {
+    }
+    &-title {
 
       &-wrapper {
-        max-width: 50%;
+        max-width: 70%;
       }
-  		&-inner {
+      &-inner {
 
-  		}
-  		&-long {
-  		}
-  		&-question {
-        font-size: 25px;
-  		}
+      }
+      &-long {
+      }
+      &-question {
+        font-size: 18px;
+      }
       &-ask {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: lighter;
       }
-  	}
-  	&-image-ltr {
-      position: absolute;
-      top: -130px;
-      right: 100px;
-      /*overflow:hidden;*/
-  		&-inner {
-        height: 375px;
-        width: 275px;
-  		}
-  	}
-  	&-button {
+    }
+    &-image-ltr {
+      right: 10%;
+      top: -0px; /* no one knows why */
+      &-inner {
+        height: 120px;
+        width: 200px;
+      }
+    }
+    &-button {
 
-  		&-inner {
+      &-inner {
 
-  			&:after {
-  				/*content: '\2192';*/
-  			}
-  		}
-  		&-link {
+        &:after {
+          /*content: '\2192';*/
+        }
+      }
+      &-link {
 
-  			&:hover,
-  			&:visited {
-  				color: var( --banner-color-white );
-  				text-decoration: none;
-  			}
-  		}
-  		&-wrapper {
-        top: 95px;
-  		}
-  	}
-  	&-close {
+        &:hover,
+        &:visited {
+          color: var(--banner-color-white);
+          text-decoration: none;
+        }
+      }
+      &-wrapper {
+      }
+    }
+    &-close {
 
-  		&-button {
+      &-button {
 
-  			&:before {
+        &:before {
 
-  			}
-  		}
-  	}
+        }
+      }
+    }
   }
 }
 
@@ -195,15 +197,13 @@
  Desktop devices
  */
 @media ( min-width: 1200px ) {
-  .cn-undefined {
-    height: 140px;
-  }
   .author-banner {
-  	&-inner {
+    height: 150px;
+    &-inner {
       flex-direction: row;
       justify-content: space-between;
-  	}
-  	&-title {
+    }
+    &-title {
       position: absolute;
       font-weight: bold;
       z-index: 1;
@@ -213,74 +213,67 @@
       &-ask {
         font-size: 25px;
       }
-  		&-inner {
+      &-inner {
 
-  		}
-  		&-long {
-  		}
-  		&-question {
+      }
+      &-long {
+      }
+      &-question {
         font-size: 33px;
-  		}
-  	}
-  	&-image-ltr {
+      }
+    }
+    &-image-ltr {
       z-index: 0;
       position: relative;
       left: 45%;
-      top: auto;
-  		&-inner {
+      top: -15px;
+      &-inner {
         width: 500px;
         height: 140px;
         position: relative;
-        top: -30px;
-  		}
-  	}
-  	&-button {
-      color: var( --banner-color-primary-darker );
-  		background-color: var( --banner-color-white );
-  		box-shadow: 2px 2px 10px rgba( 0, 0, 0, 0.25 );
-      padding: 20px 25px;
-  		border-radius: 45px;
-  		margin: 0 0 0 5%;
-  		font-size: 23px;
-      width: 200px;
+      }
+    }
+    &-button {
+      font-size: 23px;
+      width: 300px;
       &-wrapper {
         position: absolute;
         margin-top: 35px;
-        margin-right: 100px;
+        margin-right: 50px;
         top: 0;
         right: 0;
         z-index: 1;
       }
-  		&-inner {
+      &-inner {
         font-weight: bold;
-  			display: inline-block;
-  			&:after {
-  			}
-  		}
-  		&-link {
-        color: var( --banner-color-white );
-  			text-decoration: none;
-  			&:hover,
-  			&:visited {
-  				color: var( --banner-color-white );
-  				text-decoration: none;
-  			}
-  		}
-  		&-wrapper {
-  		}
-  	}
-  	&-close {
+        display: inline-block;
+        &:after {
+        }
+      }
+      &-link {
+        color: var(--banner-color-white);
+        text-decoration: none;
+        &:hover,
+        &:visited {
+          color: var(--banner-color-white);
+          text-decoration: none;
+        }
+      }
+      &-wrapper {
+      }
+    }
+    &-close {
 
-  		&-button {
+      &-button {
 
-  			&:before {
+        &:before {
 
-  			}
-  		}
-  	}
+        }
+      }
+    }
   }
 }
 
 .skin-monobook .author-banner-inner {
-	font-size: 140%;
+  font-size: 140%;
 }
