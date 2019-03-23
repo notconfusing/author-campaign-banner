@@ -9,8 +9,8 @@ $( document ).ready( function () {
 	const bannerTemplate = require( './templates/banner01.hbs' );
 	const bannerImpressionCount = increaseBannerImpCount( bannerName );
 	let dF = getDecidingFactors();
-	dF.siteLang = 'ar';
-	const bannerLocalizations = getLocalizations( dF.siteLang );
+	// dF.siteLang = 'de';
+	const bannerLocalizations = getLocalizations( dF.langToUse );
 	let bannerEnabled = decideShow( dF.siteLang, dF.userReg, dF.userEditCount,
 		dF.userGroups, bannerImpressionCount, bannerLocalizations.bannerImpressionMax );
 	bannerEnabled = true;

@@ -55,8 +55,11 @@ export function getDecidingFactors() {
 	const userEditCount = mw.config.get( 'wgUserEditCount' );
 	const userGroups = mw.config.get( 'wgUserGroups' );
 	const siteLang = mw.config.get( 'wgContentLanguage' );
+	const userLang = mw.config.get( 'wgUserLanguage' );
+	console.log('userLang', userLang, siteLang, [ 'ar', 'de', 'fa', 'pl' ].indexOf( userLang ));
+	const langToUse = [ 'ar', 'de', 'fa', 'pl' ].indexOf( userLang ) >= 0 ? userLang : siteLang;
 	return { userReg: userReg, siteName: siteName, userName: userName,
-		userEditCount: userEditCount, userGroups: userGroups, siteLang: siteLang };
+		userEditCount: userEditCount, userGroups: userGroups, langToUse: langToUse };
 }
 
 function getBannerImpCount( bannerId ) {
