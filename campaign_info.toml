@@ -9,7 +9,7 @@ filename = "./gratitude/banner_combi.js"
 pagename = "B18WMDE_grat_combi"
 tracking = "CS18_grat_combi_1"
 
-# Authors Campaign
+ Authors Campaign
 [authors]
 campaign_tracking = "WMDE_neweditors_summer2018"
 preview_link = "/wiki/Wikipedia:Hauptseite?useskin=vector&banner=B17WMDE_webpack_prototype&devbanner={{banner}}"

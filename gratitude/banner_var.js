@@ -5,8 +5,9 @@ const DE_USER_GROUP = 'autoreview'; // DE: "Active Sichter" Editors with permiss
 const DE_EDIT_MIN = 300; // DE: with 300 edit minimum
 const DE_DAY_MIN = 60; // DE: having had an account for 60 days
 const PL_USER_GROUP = 'editor'; // PL: "editor" group Editors with permission to flag revisions:
+
 const getDaysRegistered = function ( userReg ) {
-	const r = userReg.registration; // a wikimedia datestring
+	const r = String(userReg); // a wikimedia datestring
 	const regDate = new Date( Number( r.slice( 0, 4 ) ), ( Number( r.slice( 4, 6 ) ) - 1 ), Number( r.slice( 6, 8 ) ), Number( r.slice( 8, 10 ) ), Number( r.slice( 10, 12 ) ), Number( r.slice( 12, 14 ) ) );
 	const now = new Date();
 	const msSinceReg = now - regDate;
@@ -16,6 +17,7 @@ const getDaysRegistered = function ( userReg ) {
 
 export function decideShow( lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax ) {
 	// If any of these values are null, the user is probably not logged in, so we don't want to display.
+	console.log("in decide show", lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax);
 	if ( lang === null ||
         userReg === null ||
         userEditCount === null ||
@@ -49,7 +51,7 @@ export function decideShow( lang, userReg, userEditCount, userGroups, bannerImpr
 }
 
 export function getDecidingFactors() {
-	const userReg = mw.config.get( 'wgNoticeUserData' );
+	const userReg = mw.config.get( 'wgUserRegistration' );
 	const siteName = mw.config.get( 'wgSiteName' );
 	const userName = mw.config.get( 'wgUserName' );
 	const userEditCount = mw.config.get( 'wgUserEditCount' );
