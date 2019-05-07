@@ -4,5 +4,6 @@
 npm-debug.log
 node_modules/
 dist/*
+!dist/B18WMDE_grat_combi.js.wikitext
 !dist/index.html
 !dist/jquery.cookie.js
