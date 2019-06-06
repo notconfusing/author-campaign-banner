@@ -1,4 +1,5 @@
 require( './css/styles.pcss' );
+// require( './css/styles-seddon.pcss' );
 
 import { AuthorsBanner } from './AuthorsBanner';
 import { decideShow, getDecidingFactors, increaseBannerImpCount } from './banner_var';
@@ -15,7 +16,7 @@ $( document ).ready( function () {
 	console.log("bannerLocalizations", bannerLocalizations);
 	let bannerEnabled = decideShow( dF.langToUse, dF.userReg, dF.userEditCount,
 		dF.userGroups, bannerImpressionCount, bannerLocalizations.bannerImpressionMax );
-	// bannerEnabled = true;
+	bannerEnabled = true;
 	console.log("bannerEnabled:", bannerEnabled);
 	if ( bannerEnabled ) {
 		const authorsBanner = new AuthorsBanner( bannerName, bannerTemplate, bannerLocalizations );

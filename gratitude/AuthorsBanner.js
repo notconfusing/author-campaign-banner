@@ -23,8 +23,9 @@ export class AuthorsBanner {
 	createBanner() {
 		const $bannerContainer = $( '#WMDE-Banner-Container' );
 		$bannerContainer.html( this.bannerTemplate( this.bannerLocalizations ) );
-		this.addBannerSpace();
-		$( 'body' ).prepend( $( '#centralNotice' ) );
+		// this.addBannerSpace();
+		// $( 'body' ).prepend( $( '#centralNotice' ) );
+		$( '#siteNotice' ).prepend( $( '#centralNotice' ) );
 		$( '#author-banner-container' ).show();
 	}
 
