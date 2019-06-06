@@ -150,11 +150,13 @@
     &-container {
     }
     &-inner {
+      flex-direction: row;
+      justify-content: space-between;
     }
     &-title {
-
+      position: absolute;
       &-wrapper {
-        max-width: 60%;
+        max-width: 70%;
       }
       &-inner {
 
@@ -172,11 +174,12 @@
     &-image {
       //top: -0px; /* no one knows why */
       z-index: 0;
-      top: -15px;
+      top: -28px;
+      position: relative;
       &-ltr{
         left: 60%;
         &-inner {
-          width: 200px;
+          width: 180px;
           height: 140px;
           position: relative;
         }
@@ -189,7 +192,6 @@
           position: relative;
         }
       }
-
 
     }
     &-button {
@@ -209,6 +211,8 @@
         }
       }
       &-wrapper {
+        height:36px;
+        padding-top: 50px;
       }
     }
     &-close {
@@ -238,7 +242,7 @@
       font-weight: bold;
       z-index: 1;
       &-wrapper {
-        max-width: 80%;
+        max-width: 70%;
       }
       &-ask {
         font-size: 18px;
