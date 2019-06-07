@@ -1,10 +1,7 @@
-import { EventLoggingTracker } from './EventLoggingTracker';
-
 export class AuthorsBanner {
 
 	constructor( bannerName, bannerTemplate, bannerLocalizations ) {
 		this.bannerCloseTrackRatio = 0.01;
-		this.trackingEvents = new EventLoggingTracker( bannerName );
 		this.bannerTemplate = bannerTemplate;
 		this.bannerLocalizations = bannerLocalizations;
 	}
@@ -36,7 +33,6 @@ export class AuthorsBanner {
 
 	registerClickEvents() {
 		let bannerInstance = this;
-		this.trackingEvents.trackClickEvent( $( '#author-banner-close-button' ), 'banner-closed', this.bannerCloseTrackRatio );
 
 		$( '.author-banner-close' ).click( function () {
 			bannerInstance.removeBanner();

@@ -17,7 +17,7 @@ const getDaysRegistered = function ( userReg ) {
 
 export function decideShow( lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax ) {
 	// If any of these values are null, the user is probably not logged in, so we don't want to display.
-	console.log("in decide show", lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax);
+	// console.log("in decide show", lang, userReg, userEditCount, userGroups, bannerImpressionCount, bannerImpressionMax);
 	if ( lang === null ||
         userReg === null ||
         userEditCount === null ||
